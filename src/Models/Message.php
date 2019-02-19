@@ -59,6 +59,10 @@ class Message extends Eloquent
     {
         return $this->belongsTo(Models::classname(Thread::class), 'thread_id', 'id');
     }
+    public function product()
+    {
+        return $this->hasOne('App\Products', 'id','product_id');
+    }
 
     /**
      * User relationship.
